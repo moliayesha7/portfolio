@@ -1,0 +1,7 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="24" fill="#0F172A"/>
+  <circle cx="200" cy="145" r="72" fill="#334155"/>
+  <path d="M90 330C103 269 148 236 200 236C252 236 297 269 310 330" fill="#334155"/>
+  <rect x="120" y="24" width="160" height="32" rx="16" fill="#06B6D4" fill-opacity="0.18"/>
+  <text x="200" y="45" text-anchor="middle" fill="#67E8F9" font-size="14" font-family="Arial, Helvetica, sans-serif">VIBE CODER</text>
+</svg>
