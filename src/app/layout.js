@@ -1,33 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css'
 
-// Importing fonts from Google Fonts
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// Metadata for the page
 export const metadata = {
-  title: "React Developer Portfolio",
-  description: "Dynamic and fully editable portfolio website built with Next.js",
-};
+  title: 'Ayesha Khatun',
+  description: 'Created by Ayesha Khatun',
+}
 
-// RootLayout component to structure the HTML document and apply global styles
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}) {
   return (
-    // Ensuring that <html> and <body> tags are correctly placed for proper rendering
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      {/* Main body of the page */}
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+        <body>
+                {children}
+        </body>
     </html>
-  );
+  )
 }
