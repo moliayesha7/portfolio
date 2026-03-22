@@ -21,9 +21,10 @@ const portfolioData = {
       "Senior React developer with strong experience in enterprise product development, ERP systems, payment modules, and aviation operations platforms. I combine frontend architecture expertise with backend integration skills to deliver reliable, production-ready solutions.",
     highlights: [
       "Expert in React, Next.js, Redux, Redux Toolkit, RTK Query, and TypeScript",
-      "Experienced in API integration",
+      "Experienced in REST API integration",
+      "Proficient in Bootstrap, jQuery, HTML, CSS, and JavaScript",
       "Mentors teams and promotes engineering best practices",
-      "Hands-on with AWS, Vercel, Git, Figma, and CI-friendly workflows",
+      "Hands-on with AWS, Vercel, Git, Figma, and CI-friendly workflows"
     ],
   },
   skills: [
