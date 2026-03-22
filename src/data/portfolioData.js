@@ -20,7 +20,7 @@ const portfolioData = {
       "Senior React developer with strong experience in enterprise product development, ERP systems, payment modules, and aviation operations platforms. I combine frontend architecture expertise with backend integration skills to deliver reliable, production-ready solutions.",
     highlights: [
       "Expert in React, Next.js, Redux, RTK Query, and TypeScript",
-      "Experienced in Node.js API integration and PostgreSQL performance optimization",
+      "Experienced in API integration",
       "Mentors teams and promotes engineering best practices",
       "Hands-on with AWS, Vercel, Git, Figma, and CI-friendly workflows",
     ],
@@ -138,7 +138,7 @@ const portfolioData = {
       role: "Full-Stack Developer",
       period: "March 2023 - August 2025",
       impact:
-        "Developed React-based user interfaces, integrated Node.js backend APIs, and optimized PostgreSQL queries while collaborating with cross-functional product teams.",
+        "Developed React-based user interfaces, integrated backend APIs, and optimized PostgreSQL queries while collaborating with cross-functional product teams.",
     },
     {
       company: "Esquire Technology Ltd",
@@ -159,6 +159,12 @@ const portfolioData = {
     email: "moliayesha7@gmail.com",
     phone: "+880 1813235452",
     message: "I am available for senior frontend and full-stack engineering collaborations.",
+  },
+  /** Used for downloadable PDF CV (HR / ATS friendly) */
+  cv: {
+    pdfFileName: "Ayesha_Khatun_Senior_Frontend_React_Developer_CV.pdf",
+    objective:
+      "Senior Front-End React.js Developer with 6+ years building production UIs for ERP, banking payment gateways, and aviation operations platforms. Proven delivery with React, Next.js, TypeScript, Redux/RTK Query, and API integrations. Seeking senior or lead roles where I can ship reliable products, improve performance, and mentor engineers while partnering with product and backend teams.",
   },
   certifications: [
     {

@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useSyncExternalStore } from "react";
 import defaultPortfolioData from "@/data/portfolioData";
+import CvDownloadButton from "./cv/CvDownloadButton";
 
 const STORAGE_KEY = "react-dev-portfolio-data";
 
@@ -86,8 +87,9 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <header className="border-b border-white/10">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-          <p className="text-lg font-semibold">{data.site.developerName}</p>
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-5">
+          <p className="text-lg font-semibold">{data?.site?.developerName}</p>
+          <CvDownloadButton data={data} />
           {/* <button
             onClick={openEditor}
             className="rounded-md border border-cyan-400/60 px-4 py-2 text-sm font-medium text-cyan-300 transition hover:bg-cyan-500/10"
