@@ -104,26 +104,26 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flexDirection: "row",
-    justifyContent: "space-between", // Aligns the image and text to opposite sides
-    alignItems: "flex-start", // Align items at the top of the page
+    justifyContent: "space-between", 
+    alignItems: "flex-start",
     marginBottom: 20,
   },
   textContainer: {
     flexDirection: "column",
-    flex: 1, // Allow text to take up available space
+    flex: 1, 
   },
   image: {
     width: 80,
     height: 80,
-    marginLeft: 20, // Optional, to add space between the image and text
+    marginLeft: 20, 
   },
 });
 
 function shortText(text, max = 160) {
   if (!text) return "";
   const t = String(text).trim();
-  if (t.length <= max) return t;
-  return `${t.slice(0, max - 3)}...`;
+  if (t?.length <= max) return t;
+  return `${t?.slice(0, max - 3)}...`;
 }
 
 function normalizeCert(cert) {
@@ -156,7 +156,8 @@ export default function CvPdfDocument({ data }) {
     data.site?.location,
     data.site?.address,
     `Phone: ${data.contact?.phone ?? ""}`,
-    `Email: ${data.contact?.email ?? ""}`,
+    `Email: ${data.contact?.email ?? ""}`
+
   ].filter(Boolean);
 
   return (
@@ -166,21 +167,26 @@ export default function CvPdfDocument({ data }) {
       subject="Curriculum Vitae"
       keywords="React, Next.js, Frontend, Full-Stack"
     >
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={styles?.page}>
         {/* Image and Text side by side */}
-        <View style={styles.headerContainer}>
-          <View style={styles.textContainer}>
-            <Text style={styles.name}>{data.site?.developerName}</Text>
-            <Text style={styles.role}>{data.site?.role}</Text>
-            {contactBits.map((line) => (
+        <View style={styles?.headerContainer}>
+          <View style={styles?.textContainer}>
+            <Text style={styles?.name}>{data.site?.developerName}</Text>
+            <Text style={styles?.role}>{data.site?.role}</Text>
+            {contactBits?.map((line) => (
               <Text key={line} style={styles.contactLine}>
                 {line}
               </Text>
             ))}
-            {(data.socialLinks ?? []).map((s) => (
-              <Link key={s.label} src={s.url} style={[styles.contactLine, styles.link, { marginTop: 2 }]}>
-                {`${s.label}: ${s.url}`}
-              </Link>
+            {(data?.socialLinks ?? []).map((s) => (
+              <View key={s?.label} style={{ flexDirection: 'row', marginBottom: 2 }}>
+                {/* Label with black color */}
+                <Text style={{ color: '#374151' }}>{`${s.label}: `}</Text>
+                {/* URL with default link color */}
+                <Link src={s?.url} style={styles.link}>
+                  {s?.url}
+                </Link>
+              </View>
             ))}
           </View>
           <Image src="/head.png" style={styles.image} />
@@ -198,92 +204,92 @@ export default function CvPdfDocument({ data }) {
         ))}
 
         <Text style={styles.sectionTitle}>Technical skills</Text>
-        {(data.skills ?? []).map((g) => (
-          <View key={g.group} style={styles.skillGroup} wrap={false}>
-            <Text style={styles.skillLabel}>{g.group}</Text>
-            <Text style={styles.skillItems}>{(g.items ?? []).join(" · ")}</Text>
+        {(data?.skills ?? []).map((g) => (
+          <View key={g?.group} style={styles.skillGroup} wrap={false}>
+            <Text style={styles.skillLabel}>{g?.group}</Text>
+            <Text style={styles.skillItems}>{(g?.items ?? []).join(" · ")}</Text>
           </View>
         ))}
 
         <Text style={styles.sectionTitle}>Professional experience</Text>
-        {(data.experience ?? []).map((job) => (
-          <View key={`${job.company}-${job.period}`} wrap={false}>
+        {(data?.experience ?? []).map((job) => (
+          <View key={`${job?.company}-${job?.period}`} wrap={false}>
             <Text style={styles.jobTitle}>
-              {job.role} — {job.company}
+              {job?.role} — {job?.company}
             </Text>
-            <Text style={styles.jobMeta}>{job.period}</Text>
-            <Text style={styles.paragraph}>{job.impact}</Text>
+            <Text style={styles.jobMeta}>{job?.period}</Text>
+            <Text style={styles.paragraph}>{job?.impact}</Text>
           </View>
         ))}
 
         <Text style={styles.footer} fixed>
-          {`${data.site?.developerName ?? ""} · ${data.site?.role ?? ""} · ${data.contact?.email ?? ""}`}
+          {`${data?.site?.developerName ?? ""} · ${data?.site?.role ?? ""} · ${data?.contact?.email ?? ""}`}
         </Text>
       </Page>
 
       {/* Other pages can follow the same structure */}
-       <Page size="A4" style={styles.page}>
-              <Text style={styles.sectionTitle}>Selected projects & products</Text>
-              <Text style={[styles.paragraph, { fontSize: 8.5, color: "#4b5563" }]}>
-                Representative work across enterprise ERP, aviation operations, banking, and personal
-                products. Links included where publicly available.
-              </Text>
-              {(data.projects ?? []).map((p) => (
-                <View key={p.title} wrap={false}>
-                  <Text style={styles.projectTitle}>{p.title}</Text>
-                  <Text style={styles.projectDesc}>{shortText(p.description, 200)}</Text>
-                  <Text style={styles.projectTech}>{(p.tech ?? []).join(" · ")}</Text>
-                  {p.link && p.link !== "#" ? (
-                    <Link src={p.link} style={[styles.contactLine, styles.link]}>
-                      {p.link}
-                    </Link>
-                  ) : null}
-                </View>
-              ))}
-      
-              <Text style={styles.footer} fixed>
-                {`${data.site?.developerName ?? ""} — Page 2`}
-              </Text>
-      
-              {/* Education section immediately follows */}
-              <Text style={styles.sectionTitle}>Education</Text>
-              {(data.education ?? []).map((e) => (
-                <View key={`${e.degree}-${e.institution}`} style={{ marginBottom: 8 }} wrap={false}>
-                  <Text style={styles.jobTitle}>{e.degree}</Text>
-                  <Text style={styles.jobMeta}>{e.institution}</Text>
-                  <Text style={styles.skillItems}>{e.result}</Text>
-                </View>
-              ))}
-      
-              <Text style={styles.sectionTitle}>Certifications & training</Text>
-              {(data.certifications ?? []).map((raw, i) => {
-                const c = normalizeCert(raw);
-                const line = c.organization ? `${c.title} (${c.organization})` : c.title;
-                return (
-                  <View key={`${c.title}-${i}`} style={styles.bulletRow} wrap={false}>
-                    <Text style={styles.bullet}>•</Text>
-                    {c.link ? (
-                      <Link src={c.link} style={[styles.bulletText, styles.link]}>
-                        {line}
-                      </Link>
-                    ) : (
-                      <Text style={styles.bulletText}>{line}</Text>
-                    )}
-                  </View>
-                );
-              })}
-      
-              <Text style={[styles.sectionTitle, { marginTop: 16 }]}>Availability</Text>
-              <Text style={styles.paragraph}>
-                {data.site?.availability ?? ""} · {data.site?.yearsOfExperience ?? ""} experience ·{" "}
-                {data.site?.brand ? `${data.site.brand} · ` : ""}
-                References available upon request.
-              </Text>
-      
-              <Text style={styles.footer} fixed>
-                {`${data.site?.developerName ?? ""} — Page 3`}
-              </Text>
-            </Page>
+      <Page size="A4" style={styles.page}>
+        <Text style={styles.sectionTitle}>Selected projects & products</Text>
+        <Text style={[styles.paragraph, { fontSize: 8.5, color: "#4b5563" }]}>
+          Representative work across enterprise ERP, aviation operations, banking, and personal
+          products. Links included where publicly available.
+        </Text>
+        {(data?.projects ?? []).map((p) => (
+          <View key={p?.title} wrap={false}>
+            <Text style={styles.projectTitle}>{p?.title}</Text>
+            <Text style={styles.projectDesc}>{shortText(p?.description, 200)}</Text>
+            <Text style={styles.projectTech}>{(p?.tech ?? []).join(" · ")}</Text>
+            {p?.link && p?.link !== "#" ? (
+              <Link src={p?.link} style={[styles.contactLine, styles.link]}>
+                {p?.link}
+              </Link>
+            ) : null}
+          </View>
+        ))}
+
+        <Text style={styles.footer} fixed>
+          {`${data?.site?.developerName ?? ""} — Page 2`}
+        </Text>
+
+        {/* Education section immediately follows */}
+        <Text style={styles.sectionTitle}>Education</Text>
+        {(data?.education ?? []).map((e) => (
+          <View key={`${e?.degree}-${e?.institution}`} style={{ marginBottom: 8 }} wrap={false}>
+            <Text style={styles.jobTitle}>{e?.degree}</Text>
+            <Text style={styles.jobMeta}>{e?.institution}</Text>
+            <Text style={styles.skillItems}>{e?.result}</Text>
+          </View>
+        ))}
+
+        <Text style={styles.sectionTitle}>Certifications & training</Text>
+        {(data?.certifications ?? []).map((raw, i) => {
+          const c = normalizeCert(raw);
+          const line = c?.organization ? `${c?.title} (${c?.organization})` : c?.title;
+          return (
+            <View key={`${c?.title}-${i}`} style={styles.bulletRow} wrap={false}>
+              <Text style={styles.bullet}>•</Text>
+              {c?.link ? (
+                <Link src={c?.link} style={[styles.bulletText, styles.link]}>
+                  {line}
+                </Link>
+              ) : (
+                <Text style={styles.bulletText}>{line}</Text>
+              )}
+            </View>
+          );
+        })}
+
+        <Text style={[styles.sectionTitle, { marginTop: 16 }]}>Availability</Text>
+        <Text style={styles.paragraph}>
+          {data?.site?.availability ?? ""} · {data?.site?.yearsOfExperience ?? ""} experience ·{" "}
+          {data?.site?.brand ? `${data?.site?.brand} · ` : ""}
+          References available upon request.
+        </Text>
+
+        <Text style={styles.footer} fixed>
+          {`${data?.site?.developerName ?? ""} — Page 3`}
+        </Text>
+      </Page>
     </Document>
   );
 }

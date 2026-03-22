@@ -11,7 +11,8 @@ const portfolioData = {
     address: "GA-27/2, Shahjadpur, Dhaka, Bangladesh",
     image: "/head.png",
   },
-  socialLinks: [
+  socialLinks: [  
+    { label: "Portfolio", url: "https://portfolio-iota-amber-32.vercel.app" },
     { label: "GitHub", url: "https://github.com/moliayesha7" },
     { label: "LinkedIn", url: "https://linkedin.com/in/ayesha-khatun-bb5691139" }
   ],
@@ -19,7 +20,7 @@ const portfolioData = {
     summary:
       "Senior React developer with strong experience in enterprise product development, ERP systems, payment modules, and aviation operations platforms. I combine frontend architecture expertise with backend integration skills to deliver reliable, production-ready solutions.",
     highlights: [
-      "Expert in React, Next.js, Redux, RTK Query, and TypeScript",
+      "Expert in React, Next.js, Redux, Redux Toolkit, RTK Query, and TypeScript",
       "Experienced in API integration",
       "Mentors teams and promotes engineering best practices",
       "Hands-on with AWS, Vercel, Git, Figma, and CI-friendly workflows",

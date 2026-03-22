@@ -22,8 +22,8 @@ export default function CvDownloadButton({ data }) {
       anchor.download = getPdfFileName(data);
       anchor.rel = "noopener";
       document.body.appendChild(anchor);
-      anchor.click();
-      anchor.remove();
+      anchor?.click();
+      anchor?.remove();
       URL.revokeObjectURL(url);
     } catch (e) {
       console.error("CV PDF error:", e);

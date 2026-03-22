@@ -58,8 +58,8 @@ export default function PortfolioPage() {
   const [error, setError] = useState("");
 
   const profileLine = useMemo(() => {
-    return `${data.site.location} | ${data.site.yearsOfExperience} | ${data.site.availability}`;
-  }, [data.site]);
+    return `${data?.site?.location} | ${data?.site?.yearsOfExperience} | ${data?.site?.availability}`;
+  }, [data?.site]);
 
   const saveData = () => {
     try {
@@ -102,33 +102,33 @@ export default function PortfolioPage() {
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-12">
         <section className="grid gap-6 rounded-2xl border border-white/10 bg-white/5 p-8 md:grid-cols-3">
           <div className="md:col-span-2">
-            <p className="mb-2 text-cyan-300">{data.site.role}</p>
+            <p className="mb-2 text-cyan-300">{data?.site?.role}</p>
             <h1 className="mb-3 text-4xl font-bold tracking-tight md:text-5xl">
-              {data.site.tagline}
+              {data?.site?.tagline}
             </h1>
             <p className="text-slate-300">{profileLine}</p>
             <div className="mt-4 inline-block rounded-full border border-cyan-300/40 bg-cyan-500/10 px-4 py-1 text-sm text-cyan-200">
-              {data.site.brand}
+              {data?.site?.brand}
             </div>
-            <p className="mt-4 text-sm text-slate-300">{data.site.address}</p>
+            <p className="mt-4 text-sm text-slate-300">{data?.site?.address}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {data.socialLinks.map((item) => (
+              {data?.socialLinks?.map((item) => (
                 <a
-                  key={item.label}
-                  href={item.url}
+                  key={item?.label}
+                  href={item?.url}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-full border border-white/20 px-4 py-2 text-sm hover:border-cyan-300 hover:text-cyan-300"
                 >
-                  {item.label}
+                  {item?.label}
                 </a>
               ))}
             </div>
           </div>
           <div className="flex items-center justify-center md:justify-end">
             <img
-              src={data.site.image}
-              alt={`${data.site.developerName} profile`}
+              src={data?.site?.image}
+              alt={`${data?.site?.developerName} profile`}
               className="h-full w-full object-cover rounded-2xl border border-white/20"
             />
           </div>
@@ -137,9 +137,9 @@ export default function PortfolioPage() {
         <section className="grid gap-6 md:grid-cols-5">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:col-span-3">
             <h2 className="mb-3 text-2xl font-semibold">About</h2>
-            <p className="text-slate-300">{data.about.summary}</p>
+            <p className="text-slate-300">{data?.about?.summary}</p>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
-              {data.about.highlights.map((point) => (
+              {data?.about?.highlights?.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ul>
@@ -147,10 +147,10 @@ export default function PortfolioPage() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:col-span-2">
             <h2 className="mb-3 text-2xl font-semibold">Skills</h2>
             <div className="space-y-4">
-              {data.skills.map((skillGroup) => (
-                <div key={skillGroup.group}>
-                  <h3 className="font-semibold text-cyan-300">{skillGroup.group}</h3>
-                  <p className="text-sm text-slate-300">{skillGroup.items.join(" | ")}</p>
+              {data?.skills?.map((skillGroup) => (
+                <div key={skillGroup?.group}>
+                  <h3 className="font-semibold text-cyan-300">{skillGroup?.group}</h3>
+                  <p className="text-sm text-slate-300">{skillGroup?.items?.join(" | ")}</p>
                 </div>
               ))}
             </div>
@@ -160,16 +160,16 @@ export default function PortfolioPage() {
         <section>
           <h2 className="mb-4 text-2xl font-semibold">Projects</h2>
           <div className="grid gap-4 md:grid-cols-3">
-            {data.projects.map((project) => (
+            {data?.projects?.map((project) => (
               <article
-                key={project.title}
+                key={project?.title}
                 className="rounded-2xl border border-white/10 bg-white/5 p-5"
               >
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{project.description}</p>
-                <p className="mt-4 text-xs text-cyan-300">{project.tech.join(" • ")}</p>
+                <h3 className="text-lg font-semibold">{project?.title}</h3>
+                <p className="mt-2 text-sm text-slate-300">{project?.description}</p>
+                <p className="mt-4 text-xs text-cyan-300">{project?.tech?.join(" • ")}</p>
                 <a
-                  href={project.link}
+                  href={project?.link}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-4 inline-block text-sm text-cyan-300 hover:underline"
@@ -185,23 +185,23 @@ export default function PortfolioPage() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="mb-4 text-2xl font-semibold">Experience</h2>
             <div className="space-y-4">
-              {data.experience.map((job) => (
-                <article key={`${job.company}-${job.period}`}>
+              {data?.experience?.map((job) => (
+                <article key={`${job?.company}-${job?.period}`}>
                   <h3 className="font-semibold">
-                    {job.role} - {job.company}
+                    {job?.role} - {job?.company}
                   </h3>
-                  <p className="text-sm text-cyan-300">{job.period}</p>
-                  <p className="mt-1 text-sm text-slate-300">{job.impact}</p>
+                  <p className="text-sm text-cyan-300">{job?.period}</p>
+                  <p className="mt-1 text-sm text-slate-300">{job?.impact}</p>
                 </article>
               ))}
             </div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="mb-4 text-2xl font-semibold">Contact</h2>
-            <p className="text-slate-300">{data.contact.message}</p>
-            <p className="mt-4 text-sm text-slate-200">Email: {data.contact.email}</p>
-            <p className="mt-1 text-sm text-slate-200">Phone: {data.contact.phone}</p>
-            <p className="mt-1 text-sm text-slate-200">Address: {data.site.address}</p>
+            <p className="text-slate-300">{data?.contact?.message}</p>
+            <p className="mt-4 text-sm text-slate-200">Email: {data?.contact?.email}</p>
+            <p className="mt-1 text-sm text-slate-200">Phone: {data?.contact?.phone}</p>
+            <p className="mt-1 text-sm text-slate-200">Address: {data?.site?.address}</p>
           </div>
         </section>
 
@@ -209,11 +209,11 @@ export default function PortfolioPage() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="mb-4 text-2xl font-semibold">Education</h2>
             <div className="space-y-4">
-              {data.education.map((item) => (
-                <article key={`${item.degree}-${item.institution}`}>
-                  <h3 className="font-semibold">{item.degree}</h3>
-                  <p className="text-sm text-slate-300">{item.institution}</p>
-                  <p className="text-sm text-cyan-300">{item.result}</p>
+              {data?.education?.map((item) => (
+                <article key={`${item?.degree}-${item?.institution}`}>
+                  <h3 className="font-semibold">{item?.degree}</h3>
+                  <p className="text-sm text-slate-300">{item?.institution}</p>
+                  <p className="text-sm text-cyan-300">{item?.result}</p>
                 </article>
               ))}
             </div>
@@ -221,18 +221,18 @@ export default function PortfolioPage() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="mb-4 text-2xl font-semibold">Certifications</h2>
             <ul className="list-disc space-y-2 pl-5 text-sm text-slate-300">
-              {data.certifications.map((cert, index) => (
+              {data?.certifications?.map((cert, index) => (
                 <li key={index}>
                   <a
-                    href={cert.link}
+                    href={cert?.link}
                     target="_blank"
                     rel="noreferrer"
                     className="text-cyan-300 hover:underline"
                   >
-                    {cert.title}
+                    {cert?.title}
                   </a>
                   <span className="text-xs text-gray-500 ml-2">
-                    ({cert.organization})
+                    ({cert?.organization})
                   </span>
                 </li>
               ))}
@@ -255,7 +255,7 @@ export default function PortfolioPage() {
             </div>
             <textarea
               value={jsonValue}
-              onChange={(event) => setJsonValue(event.target.value)}
+              onChange={(event) => setJsonValue(event?.target?.value)}
               className="min-h-0 flex-1 rounded-md border border-white/20 bg-slate-950 p-4 font-mono text-sm outline-none"
             />
             <div className="mt-3 flex flex-wrap items-center gap-3">
