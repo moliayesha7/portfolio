@@ -165,7 +165,7 @@ export default function CvPdfDocument({ data }) {
       title={`${data.site?.developerName ?? ""} — CV`}
       author={data.site?.developerName}
       subject="Curriculum Vitae"
-      keywords="React, Next.js, Frontend, Full-Stack"
+      keywords="Node.js, React, Next.js, Frontend, Full-Stack"
     >
       <Page size="A4" style={styles?.page}>
         {/* Image and Text side by side */}

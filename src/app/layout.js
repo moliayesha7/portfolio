@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "React Developer Portfolio",
+  title: "Full Stack Developer Portfolio",
   description: "Dynamic and fully editable portfolio website built with Next.js",
 };
 
