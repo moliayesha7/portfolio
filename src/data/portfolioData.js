@@ -1,40 +1,40 @@
 const portfolioData = {
   site: {
     developerName: "Ayesha Khatun",
-    role: "Senior Front-End React.js Developer",
+    role: "Senior Full Stack Developer",
     brand: "Vibe Coder",
     tagline:
-      "I design and develop high-performance, scalable, and user-focused web applications with React and Next.js.",
+      "Building production-grade full-stack ecosystems with Node.js, React, and Laravel",
     location: "Dhaka, Bangladesh",
     yearsOfExperience: "6+ years",
     availability: "Open to senior frontend and full-stack opportunities",
     address: "GA-27/2, Shahjadpur, Dhaka, Bangladesh",
     image: "/head.png",
   },
-  socialLinks: [  
+  socialLinks: [
     { label: "Portfolio", url: "https://portfolio-iota-amber-32.vercel.app" },
     { label: "GitHub", url: "https://github.com/moliayesha7" },
     { label: "LinkedIn", url: "https://linkedin.com/in/ayesha-khatun-bb5691139" }
   ],
   about: {
     summary:
-      "Senior React developer with strong experience in enterprise product development, ERP systems, payment modules, and aviation operations platforms. I combine frontend architecture expertise with backend integration skills to deliver reliable, production-ready solutions.",
+      "Senior Full-Stack Developer with 6+ years of experience architecting end-to-end ecosystems for enterprise ERPs, banking payment gateways, and aviation platforms. I bridge high-performance React/Next.js frontends with robust backends in Node.js, Laravel, and Django to deliver scalable, production-ready solutions.",
     highlights: [
-      "Expert in React, Next.js, Redux, Redux Toolkit, RTK Query, and TypeScript",
-      "Experienced in REST API integration",
-      "Proficient in Bootstrap, jQuery, HTML, CSS, and JavaScript",
-      "Mentors teams and promotes engineering best practices",
-      "Hands-on with AWS, Vercel, Git, Figma, and CI-friendly workflows"
+      "Building scalable microservices and RESTful APIs using Express and Node.js.",
+      "Developing robust MVC architectures, Eloquent ORM patterns, and secure payment integrations.",
+      "Expert in React 18/19, Next.js (App Router), and TypeScript for type-safe, scalable UIs.",
+      "Advanced state management with Redux Toolkit and optimized server-state caching via RTK Query.",
+      "Designing and optimizing PostgreSQL, MySQL, and Redis for high-concurrency systems."
     ],
   },
   skills: [
     {
-      group: "Frontend Engineering",
-      items: ["React", "Next.js", "Redux", "RTK Query", "TypeScript", "Tailwind CSS", "Ant Design"],
+      group: "Backend & Data",
+      items: ["Node.js", "Express.js", "Laravel", "PostgreSQL", "MySQL", "MongoDB"],
     },
     {
-      group: "Backend & Data",
-      items: ["Node.js", "Express.js", "PostgreSQL", "MySQL", "MongoDB", "REST API Integration"],
+      group: "Frontend Engineering",
+      items: ["React", "Next.js", "Redux", "RTK Query", "TypeScript", "Tailwind CSS", "Ant Design"],
     },
     {
       group: "Tools & Platforms",
@@ -43,10 +43,17 @@ const portfolioData = {
   ],
   projects: [
     {
+      title: "SaaS Multi-Shop Platform (Running)",
+      description:
+        "Developing a scalable multi-tenant ecommerce engine utilizing a microservices-inspired architecture. Orchestrated 6+ Laravel backend services and a React SPA, leveraging Docker for containerization",
+      tech: ["Laravel", "React", "Docker", "PostgreSQL", "Vite", "Redis"],
+      link: "#",
+    },
+    {
       title: "TechnoNext Corporate Website",
       description:
-        "Delivered frontend engineering and feature maintenance for the company website with performance-first implementation.",
-      tech: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+        "Architected robust Node.js backend services and delivered frontend engineering for the corporate platform. Focused on performance-first feature maintenance, API optimization, and seamless full-stack integration.",
+      tech: ["Node.js", "React", "Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
       link: "https://technonext.com",
     },
     {
@@ -66,15 +73,15 @@ const portfolioData = {
     {
       title: "Fuel Efficiency System",
       description:
-        "Built UI features for fuel analytics and operational optimization, supporting performance-critical business decisions.",
-      tech: ["React", "Next.js", "Node.js", "Tailwind CSS", "PostgreSQL"],
+        "Engineered full-stack analytics tools and high-performance Node.js APIs to process complex fuel data, enabling real-time operational optimization and data-driven business intelligence.",
+      tech: ["Node.js", "PostgreSQL", "React", "Next.js", "Tailwind CSS", "Redis"],
       link: "https://fuel.usbair.com",
     },
     {
       title: "Ground Service Management System",
       description:
-        "Implemented operational modules for service assignment and workflow tracking in airport ground operations.",
-      tech: ["React", "TypeScript", "RTK Query", "Node.js"],
+        "Developed mission-critical Node.js services and real-time state management for airport ground operations. Designed robust workflows for service assignment and automated tracking to ensure operational efficiency.",
+      tech: ["Node.js", "TypeScript", "RTK Query", "React", "PostgreSQL", "Docker"],
       link: "#",
     },
     {
@@ -140,33 +147,36 @@ const portfolioData = {
       role: "Full-Stack Developer",
       period: "March 2023 - August 2025",
       impact:
-        "Developed React-based user interfaces, integrated backend APIs, and optimized PostgreSQL queries while collaborating with cross-functional product teams.",
+        "Engineered scalable full-stack features using the React/Node.js ecosystem. Optimized PostgreSQL database performance through advanced indexing and query restructuring, reducing API latency and improving system reliability across cross-functional product teams.",
     },
     {
-      company: "Esquire Technology Ltd",
-      role: "Frontend Developer",
-      period: "April 2021 - February 2023",
-      impact:
-        "Designed and managed frontend modules for Garments ERP Software using HTML5, jQuery, and Bootstrap.",
-    },
-    {
-      company: "Business Accelerate BD Ltd",
-      role: "Software Engineer",
-      period: "December 2018 - March 2021",
-      impact:
-        "Delivered ReactJS API integrations and built payment gateway frontend modules for foreign banking systems.",
-    },
+  company: "Esquire Technology Ltd",
+  role: "Frontend Developer",
+  period: "April 2021 - February 2023",
+  impact:
+    "Led the frontend architecture for mission-critical modules in a large-scale Garments ERP system using HTML5, jQuery, and Bootstrap. Collaborated on backend workflows by implementing supporting Django logic and server-side integrations, ensuring seamless data flow and high integrity for complex enterprise operations.",
+},
+ {
+  company: "Business Accelerate BD Ltd",
+  role: "Software Engineer",
+  period: "December 2018 - March 2021",
+  impact:
+    "Engineered robust React-based core banking modules and complex API integrations for City Bank's international systems. Developed high-availability frontend architecture for account management and transaction workflows, ensuring seamless data synchronization across large-scale financial platforms.",
+},
   ],
-  contact: {
-    email: "moliayesha7@gmail.com",
-    phone: "+880 1813235452",
-    message: "I am available for senior frontend and full-stack engineering collaborations.",
-  },
+ contact: {
+  email: "moliayesha7@gmail.com",
+  phone: "+880 1813235452",
+  location: "Dhaka, Bangladesh",
+  professionalSummary: 
+    "Senior Engineer specializing in scalable Full-Stack architectures. Expert in building high-availability systems across Fintech, ERP, and Multi-tenant SaaS platforms using the React, Node.js, and Laravel ecosystems.",
+  availability: "Open to Senior Frontend and Full-Stack engineering collaborations.",
+},
   /** Used for downloadable PDF CV (HR / ATS friendly) */
   cv: {
-    pdfFileName: "Ayesha_Khatun_Senior_Frontend_React_Developer_CV.pdf",
-    objective:
-      "Senior Front-End React.js Developer with 6+ years building production UIs for ERP, banking payment gateways, and aviation operations platforms. Proven delivery with React, Next.js, TypeScript, Redux/RTK Query, and API integrations. Seeking senior or lead roles where I can ship reliable products, improve performance, and mentor engineers while partnering with product and backend teams.",
+    pdfFileName: "Ayesha_Khatun_Full_Stack_Developer_CV.pdf",
+    objective: 
+  "Senior Full-Stack Engineer with 6+ years of experience architecting high-availability systems for Fintech, Aviation, and Enterprise ERP platforms. Expert in building scalable Node.js and Laravel microservices, optimizing complex PostgreSQL schemas, and implementing advanced Redis caching strategies. Proven track record of bridging the gap between robust backend architectures and high-performance React frontends. Seeking Lead or Senior roles to design resilient distributed systems, optimize mission-critical APIs, and mentor engineering teams through complex technical challenges.",
   },
   certifications: [
     {
