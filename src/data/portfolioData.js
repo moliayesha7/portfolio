@@ -50,6 +50,13 @@ const portfolioData = {
       link: "#",
     },
     {
+      title: "Living Documentation - SaaS Multi-Shop Platform",
+      description:
+        "A comprehensive living documentation site for a scalable, multi-tenant eCommerce engine. It details a microservices-inspired architecture featuring 6+ Laravel backend services integrated with a React SPA. The documentation demonstrates advanced workflows including Docker containerization, monorepo management, and high-performance full-stack integration.",
+      tech: ["React","Vite", "Tailwind CSS","Storybook"],
+      link: "https://laravel-learning-site.vercel.app",
+    },
+    {
       title: "TechnoNext Corporate Website",
       description:
         "Architected robust Node.js backend services and delivered frontend engineering for the corporate platform. Focused on performance-first feature maintenance, API optimization, and seamless full-stack integration.",
