@@ -43,6 +43,13 @@ const portfolioData = {
   ],
   projects: [
     {
+      title: "Donor Management System",
+      description:
+        "A Laravel-based platform for managing donors, students, projects, and donations.By using this application, one can create different donation categories and collect funds securely through the integrated Stripe payment gateway. Donors receive their donor statements and automated notifications via WhatsApp and email immediately after their payment is successfully processed. Additionally, the platform includes donor-category-based expense tracking, allowing the maintenance organization to monitor expenses and generate project-wise ledgers.",
+      tech: ["Laravel", "React", "MySQL", "Vite","Stripe API"],
+      link: "#",
+    },
+    {
       title: "SaaS Multi-Shop Platform (Running)",
       description:
         "Developing a scalable multi-tenant ecommerce engine utilizing a microservices-inspired architecture. Orchestrated 6+ Laravel backend services and a React SPA, leveraging Docker for containerization",
