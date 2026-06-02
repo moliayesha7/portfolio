@@ -47,7 +47,7 @@ const portfolioData = {
       description:
         "A Laravel-based platform for managing donors, students, projects, and donations.By using this application, one can create different donation categories and collect funds securely through the integrated Stripe payment gateway. Donors receive their donor statements and automated notifications via WhatsApp and email immediately after their payment is successfully processed. Additionally, the platform includes donor-category-based expense tracking, allowing the maintenance organization to monitor expenses and generate project-wise ledgers.",
       tech: ["Laravel", "React", "MySQL", "Vite","Stripe API"],
-      link: "#",
+      link: "/Donor_Management_System_V01.pdf",
     },
     {
       title: "SaaS Multi-Shop Platform (Running)",
